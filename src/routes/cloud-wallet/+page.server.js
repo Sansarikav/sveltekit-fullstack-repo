@@ -63,7 +63,7 @@ export const actions = {
     // const xPubKeys = await walletModule.getXPubKeys({ walletId: walletCreation1.walletID });
     // console.log(xPubKeys);
      
-    return {success: true, balance: DefaultWalletBalance.data.balance.summary};
+    return {auth: true, balance: DefaultWalletBalance.data.balance.summary};
   },
 
   pay: async ({request}) => {
@@ -90,10 +90,11 @@ export const actions = {
         ]
       };
 
-    const payResponse = await neucron.pay.txSpend(options)
-    console.log(payResponse)
-
-    return {success: true, payment: payResponse.data.txid};
+      let payResponse;
+      
+      payResponse = await neucron.pay.txSpend(options);
+      console.log(payResponse);
+      return { success: true, payResponse: payResponse.data.txid };
 
   }
 
