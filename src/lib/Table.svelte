@@ -1,5 +1,5 @@
 <script>
-    export let names
+    export let names; 
 </script>
 
 <div
@@ -27,7 +27,17 @@
                 <button type="submit">
                     <img class="w-4 float-right" src="./trash-can.svg" alt="delete"/>
                 </button>
-                </form>
+			   </form>
+			   <form method="POST" action="/profiles/update">
+                <input type="hidden" name="id" id="id" value={user.id}>
+				<input type="hidden" name="name" id="name" value={user.name}>
+				<input type="hidden" name="email" id="email" value={user.email}>
+                <button type="submit"
+				class="bg-yellow-500 hover:bg-blue-700 text-white font-bold mt-5 ml-2 px-2 rounded "
+				>
+                    Update
+                </button>
+			   </form>
 			</div>
 		{/each}
 	</div>

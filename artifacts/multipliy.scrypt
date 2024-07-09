@@ -1,0 +1,12 @@
+
+contract Multiply {
+  int num1;
+  int num2;
+  constructor(int inp_1, int inp_2) {
+    this.num1 = inp_1;
+    this.num2 = inp_2;
+  }
+  public function unlock(int multiply) {
+    require(multiply == this.num1 * this.num2);
+  }
+}
