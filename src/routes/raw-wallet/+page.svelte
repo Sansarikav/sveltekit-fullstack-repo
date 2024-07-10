@@ -15,7 +15,9 @@
 </script>
 
 <section>
-    <button class = "bg-black text-white p-2 rounded mx-auto" on:click={createKeys}> Generate New wallet Keys </button>
-    <p>Private Key WIF format is {WIF}</p>
-    <p>Your Bitcoin Address is {address}</p>
+    <div class= "p-5">
+    <button class = "bg-blue-800 text-white text-center font-semibold p-4 rounded mx-auto mb-4" on:click={createKeys}> Generate New wallet Keys </button>
+    <p>Private Key WIF format is: <span class = "font-semibold">{WIF}</span></p>
+    <p>Your Bitcoin Address is: <span class = "font-semibold">{address}</span></p>
+    </div>
 </section>
